@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint",
     "format": "npx prettier --write ."
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "three": "^0.179.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "^22.18.0",
     "@types/react": "^19.1.12",
