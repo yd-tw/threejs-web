@@ -137,19 +137,19 @@ export default function ClawMachine(): JSX.Element {
   };
 
   return (
-    <div ref={mountRef} className="w-screen h-screen relative">
+    <div ref={mountRef} className="relative h-screen w-screen">
       {giftInfo && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-3/4 h-2/3 p-10 rounded-lg shadow-2xl text-center z-10">
+        <div className="absolute top-1/2 left-1/2 z-10 h-2/3 w-3/4 -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white p-10 text-center shadow-2xl">
           <button
             onClick={() => {
               setGiftInfo(false);
               setCount((prevCount) => prevCount + 1);
             }}
-            className="absolute top-4 right-4 bg-gray-200 hover:bg-gray-300 text-gray-600 rounded-full p-3 focus:outline-hidden"
+            className="absolute top-4 right-4 rounded-full bg-gray-200 p-3 text-gray-600 hover:bg-gray-300 focus:outline-hidden"
           >
             ✖
           </button>
-          <div className="flex flex-col items-center justify-center h-full">
+          <div className="flex h-full flex-col items-center justify-center">
             <Image
               src={gift[count].image}
               alt="Gift"
@@ -159,12 +159,12 @@ export default function ClawMachine(): JSX.Element {
               className="object-contain"
             />
             <p className="mt-6 text-2xl font-semibold">{gift[count].name}</p>
-            <p className="mb-6 text-bg font-semibold">{gift[count].describe}</p>
+            <p className="text-bg mb-6 font-semibold">{gift[count].describe}</p>
             {count < 3 ? (
               <p className="mt-4 text-lg">再 {3 - count} 次出現特別禮物</p>
             ) : (
               <Link href="/end">
-                <span className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-lg text-lg">
+                <span className="mt-6 rounded-lg bg-blue-600 px-6 py-3 text-lg font-bold text-white shadow-lg hover:bg-blue-700">
                   點開紙條
                 </span>
               </Link>
@@ -177,7 +177,7 @@ export default function ClawMachine(): JSX.Element {
         <button
           onTouchStart={() => handleJoystickMove("up", true)}
           onTouchEnd={() => handleJoystickMove("up", false)}
-          className="w-14 h-14 bg-red-200 rounded-full flex select-none items-center justify-center text-xl font-bold"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-red-200 text-xl font-bold select-none"
         >
           ↑
         </button>
@@ -185,21 +185,21 @@ export default function ClawMachine(): JSX.Element {
           <button
             onTouchStart={() => handleJoystickMove("left", true)}
             onTouchEnd={() => handleJoystickMove("left", false)}
-            className="w-14 h-14 bg-red-200 rounded-full flex select-none items-center justify-center text-xl font-bold"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-red-200 text-xl font-bold select-none"
           >
             ←
           </button>
           <button
             onTouchStart={() => handleJoystickMove("grab", true)}
             onTouchEnd={() => handleJoystickMove("grab", false)}
-            className="w-14 h-14 bg-red-200 rounded-full flex select-none items-center justify-center text-xl font-bold"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-red-200 text-xl font-bold select-none"
           >
             抓
           </button>
           <button
             onTouchStart={() => handleJoystickMove("right", true)}
             onTouchEnd={() => handleJoystickMove("right", false)}
-            className="w-14 h-14 bg-red-200 rounded-full flex select-none items-center justify-center text-xl font-bold"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-red-200 text-xl font-bold select-none"
           >
             →
           </button>
@@ -207,7 +207,7 @@ export default function ClawMachine(): JSX.Element {
         <button
           onTouchStart={() => handleJoystickMove("down", true)}
           onTouchEnd={() => handleJoystickMove("down", false)}
-          className="w-14 h-14 bg-red-200 rounded-full flex select-none items-center justify-center text-xl font-bold"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-red-200 text-xl font-bold select-none"
         >
           ↓
         </button>
